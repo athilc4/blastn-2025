@@ -26,7 +26,7 @@ do
 
     # Run remote blastn for all sequences in this FASTA
     blastn -query "$fasta" -db nt -remote -out "$output_file" \
-        -max_target_seqs 5 -evalue 500 -outfmt '6 qseqid sseqid evalue pident bitscore sacc staxids sscinames scomnames stitle'
+        -max_target_seqs 5 -evalue 500 -perc_identity 97 -outfmt '6 qseqid sseqid evalue pident bitscore sacc staxids sscinames scomnames stitle qlen slen'
 
     echo "Finished ${base}.fasta → $output_file"
 
